@@ -1,0 +1,23 @@
+<%- include("../partials/header.ejs") %>
+
+<div class="show-instructional-page">
+  <div class="instructional-details">
+    <img src="<%= instructional.thumbnailUrl %>" alt="<%= instructional.title %>" />
+
+    <h1><%= instructional.title %></h1>
+    <p><strong>Instructor:</strong> <%= instructional.instructor %></p>
+    <p><strong>Price:</strong> $<%= instructional.price.toFixed(2) %></p>
+
+    <% if (user && user.favorites && user.favorites.includes(instructional._id.toString())) { %>
+      <form method="POST" action="/users/<%= user._id %>/favorites/<%= instructional._id %>?_method=DELETE">
+        <button type="submit">Unfavorite</button>
+      </form>
+    <% } else if (user) { %>
+      <form method="POST" action="/users/<%= user._id %>/favorites/<%= instructional._id %>">
+        <button type="submit">Favorite</button>
+      </form>
+    <% } %>
+  </div>
+</div>
+
+<%- include("../partials/footer.ejs") %>

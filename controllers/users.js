@@ -1,10 +1,10 @@
 import express from "express";
+const router = express.Router();
+
 import User from "../models/user.js";
 import Instructional from "../models/Instructional.js";
 
-const router = express.Router();
-
-// ✅ NEW: GET /users/:id/profile – show user profile
+// GET /users/:id/profile – show user profile
 router.get("/:id/profile", async (req, res) => {
   try {
     const user = await User.findById(req.params.id).populate("favorites");
@@ -15,7 +15,7 @@ router.get("/:id/profile", async (req, res) => {
   }
 });
 
-// ✅ GET /users/:id/edit – show edit form
+// GET /users/:id/edit – show edit form
 router.get("/:id/edit", async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -26,7 +26,7 @@ router.get("/:id/edit", async (req, res) => {
   }
 });
 
-// ✅ PUT /users/:id – update user profile
+// PUT /users/:id – update user profile
 router.put("/:id", async (req, res) => {
   try {
     const { age, rank, bio } = req.body;
@@ -38,7 +38,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// ✅ POST /users/:userId/favorites/:instructionalId – add to favorites
+// POST /users/:userId/favorites/:instructionalId – add to favorites
 router.post("/:userId/favorites/:instructionalId", async (req, res) => {
   try {
     const user = await User.findById(req.params.userId);
@@ -47,6 +47,11 @@ router.post("/:userId/favorites/:instructionalId", async (req, res) => {
     if (!user.favorites.includes(instructionalId)) {
       user.favorites.push(instructionalId);
       await user.save();
+
+      // Update session
+      if (req.session.user && req.session.user._id === user._id.toString()) {
+        req.session.user.favorites = user.favorites.map(fav => fav.toString());
+      }
     }
 
     res.redirect("/instructionals");
@@ -56,25 +61,30 @@ router.post("/:userId/favorites/:instructionalId", async (req, res) => {
   }
 });
 
-// ✅ DELETE /users/:userId/favorites/:instructionalId – remove from favorites
 router.delete("/:userId/favorites/:instructionalId", async (req, res) => {
   try {
     const user = await User.findById(req.params.userId);
     const instructionalId = req.params.instructionalId;
 
     user.favorites = user.favorites.filter(
-      (favId) => favId.toString() !== instructionalId
+      favId => favId.toString() !== instructionalId
     );
     await user.save();
 
-    res.redirect(`/users/${req.params.userId}/profile`);
+    if (req.session.user && req.session.user._id === user._id.toString()) {
+      req.session.user.favorites = user.favorites.map(fav => fav.toString());
+    }
+
+    // ✅ Redirects user back to the page they came from
+    res.redirect(req.get("Referer") || `/users/${req.params.userId}/profile`);
   } catch (err) {
     console.error("Unfavorite error:", err);
     res.status(500).send("Server error");
   }
 });
 
-// ✅ LAST: GET /users/:userId – fallback, should be last
+
+// (Optional fallback) GET /users/:userId – fallback to profile
 router.get("/:userId", async (req, res) => {
   try {
     const user = await User.findById(req.params.userId).populate("favorites");

@@ -1,6 +1,6 @@
 export function isSignedIn(req, res, next) {
   if (!req.session.user) {
-    return res.redirect("/auth/sign-in");
+    return res.redirect("/");
   }
   next();
 }

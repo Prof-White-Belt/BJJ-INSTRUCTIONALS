@@ -16,4 +16,16 @@ router.get("/", async (req, res) => {
   }
 });
 
+// GET /instructionals/:id – Show individual instructional
+router.get("/:id", async (req, res) => {
+  try {
+    const instructional = await Instructional.findById(req.params.id);
+    res.render("instructionals/show", { instructional, user: req.session.user });
+  } catch (err) {
+    console.error("Show error:", err);
+    res.status(500).send("Error loading instructional page");
+  }
+});
+
+
 export default router;

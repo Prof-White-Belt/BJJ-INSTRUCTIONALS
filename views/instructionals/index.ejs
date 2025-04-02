@@ -1,22 +1,31 @@
 <%- include("../partials/header.ejs") %>
 
-<h1>📚 BJJ Instructionals</h1>
+<div class="instructionals-page">
+  <h1>BJJ Instructionals</h1>
 
-<div class="instructionals">
-  <% instructionals.forEach(i => { %>
-    <div class="card">
-      <img src="<%= i.thumbnailUrl %>" alt="<%= i.title %>" width="200" />
-      <h2><%= i.title %></h2>
-      <p><strong>Instructor:</strong> <%= i.instructor %></p>
-      <p><strong>Price:</strong> $<%= i.price.toFixed(2) %></p>
+  <div class="instructionals-grid">
+    <% instructionals.forEach(i => { %>
+      <div class="instructional-card">
+        <a href="/instructionals/<%= i._id %>">
+          <img src="<%= i.thumbnailUrl %>" alt="<%= i.title %>" />
+          <h2><%= i.title %></h2>
+        </a>
 
-      <% if (user) { %>
-        <form method="POST" action="/users/<%= user._id %>/favorites/<%= i._id %>">
-          <button type="submit"> Favorite</button>
-        </form>
-      <% } %>
-    </div>
-  <% }) %>
+        <p><strong>Instructor:</strong> <%= i.instructor %></p>
+        <p><strong>Price:</strong> $<%= i.price.toFixed(2) %></p>
+
+        <% if (user && user.favorites && user.favorites.includes(i._id.toString())) { %>
+          <form method="POST" action="/users/<%= user._id %>/favorites/<%= i._id %>?_method=DELETE">
+            <button type="submit" class="unfav-btn">Unfavorite</button>
+          </form>
+        <% } else if (user) { %>
+          <form method="POST" action="/users/<%= user._id %>/favorites/<%= i._id %>">
+            <button type="submit" class="fav-btn">Favorite</button>
+          </form>
+        <% } %>
+      </div>
+    <% }) %>
+  </div>
 </div>
 
 <%- include("../partials/footer.ejs") %>

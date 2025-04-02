@@ -221,4 +221,215 @@ body {
     background-color: #b8cad7;
     transform: translateY(-2px);
   }
+  /* ======================== */
+/* PROFILE PAGE STYLES */
+/* ======================== */
+
+.profile-page {
+    min-height: 100vh;
+    padding: 3rem 2rem;
+    background: url("/images/bjj-profile.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .profile-card {
+    background: rgba(255, 255, 255, 0.35);
+    -webkit-backdrop-filter: blur(6px); /* For Safari */
+    backdrop-filter: blur(6px);         /* For Chrome/Edge */
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  .profile-card h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-card p {
+    margin: 0.5rem 0;
+  }
+  
+  .profile-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #08080867;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .profile-card a:hover {
+    text-decoration: underline;
+  }
+  .fav-form {
+  margin-top: 1rem;
+}
+
+.fav-btn,
+.unfav-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fav-btn {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.fav-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.unfav-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.unfav-btn:hover {
+  background-color: #d32f2f;
+}
+
+
+
+
+
+
+  /* ======================== */
+/* FAVORITE/UNFAVORITE STYLES */
+/* ======================== */
+
+
+
+
+.fav-form {
+    margin-top: 1rem;
+  }
+  
+  .fav-btn,
+  .unfav-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .fav-btn {
+    background-color: #ffffff;
+    color: #000;
+  }
+  
+  .fav-btn:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .unfav-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .unfav-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+
+
+
+
+  /* ======================== */
+/* INSTRUCTIONALS STYLES */
+/* ======================== */
+
+
+
+
+  .instructionals-page {
+    padding: 3rem;
+    min-height: 100vh;
+    background: url("/images/bjj-instructionals.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .instructionals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    margin-top: 2rem;
+  }
+  
+  .instructional-card {
+    background: rgba(255, 255, 255, 0.85);
+    color: #111;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+  }
+  
+  .instructional-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .instructional-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  .instructional-info h2 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+  }
+  
+  .instructional-info p {
+    font-size: 0.95rem;
+    margin: 0.3rem 0;
+  }
+  
+  .fav-btn,
+  .unfav-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .fav-btn {
+    background-color: #ffffff;
+    color: #000;
+  }
+  
+  .fav-btn:hover {
+    background-color: #eee;
+  }
+  
+  .unfav-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .unfav-btn:hover {
+    background-color: #d32f2f;
+  }
   

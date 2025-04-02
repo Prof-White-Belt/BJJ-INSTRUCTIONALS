@@ -21,43 +21,43 @@ router.post("/sign-up", async (req, res) => {
       bio: req.body.bio,
     });
 
-    req.session.user = user;
+    req.session.user = {
+      _id: user._id,
+      username: user.username,
+      favorites: [] // New user has no favorites yet
+    };
 
-    // ✅ Update this line:
-    res.redirect("/"); // this will redirect to localhost:3000
+    res.redirect("/");
   } catch (err) {
     res.status(400).send("Error creating account");
   }
 });
 
-
-// POST: Sign In User
+// POST sign-in
 router.post("/sign-in", async (req, res) => {
   try {
     const userInDb = await User.findOne({ username: req.body.username });
-    if (!userInDb) {
-      return res.redirect("/");
-    }
 
-    const validPassword = await bcrypt.compare(
-      req.body.password,
-      userInDb.password
-    );
+    if (!userInDb) return res.redirect("/");
 
-    if (!validPassword) {
-      return res.redirect("/");
-    }
+    const validPassword = await bcrypt.compare(req.body.password, userInDb.password);
 
-    req.session.user = userInDb;
-    res.redirect("/home"); // ✅ New redirect to /home
+    if (!validPassword) return res.redirect("/");
+
+    req.session.user = {
+      _id: userInDb._id,
+      username: userInDb.username,
+      favorites: userInDb.favorites.map(fav => fav.toString()),
+    };
+
+    res.redirect("/home");
   } catch (err) {
     console.log(err);
     res.redirect("/");
   }
 });
 
-
-// Logout
+// GET logout
 router.get("/logout", (req, res) => {
   req.session.destroy(() => {
     res.redirect("/");
