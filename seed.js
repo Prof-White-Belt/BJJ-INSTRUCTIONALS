@@ -6,47 +6,48 @@ import "./db/connection.js";
 dotenv.config();
 
 const seedInstructionals = [
-  {
-    title: "Leg Locks Unlocked",
-    instructor: "Craig Jones",
-    price: 49.99,
-    videoUrl: "https://www.youtube.com/watch?v=example1",
-    thumbnailUrl: "/images/instructionals/leglock.png"
-},
+    {
+        title: "Mikey Lock",
+        instructor: "Mikey Musumeci",
+        price: 49.99,
+        videoUrl: "https://www.youtube.com/watch?v=FP6CLsmL3jQ&ab_channel=BernardoFariaBJJFanatics",
+        thumbnailUrl: "/images/instructionals/leglock.png"
+      },
+      
   {
     title: "Passing the Guard",
     instructor: "Gordon Ryan",
     price: 59.99,
     videoUrl: "https://www.youtube.com/watch?v=example2",
-    thumbnailUrl: "https://i.imgur.com/mn9UazF.jpg"
+    thumbnailUrl: "/images/instructionals/passing.png"
   },
   {
     title: "Top Pressure System",
-    instructor: "Lucas Lepri",
+    instructor: "Leandro Lo",
     price: 44.99,
     videoUrl: "https://www.youtube.com/watch?v=example3",
-    thumbnailUrl: "https://i.imgur.com/4AiXzf8.jpeg"
+    thumbnailUrl: "/images/instructionals/leo.png"
   },
   {
     title: "No-Gi Takedowns",
-    instructor: "ADCC Champions",
+    instructor: "Kade Ruotolo",
     price: 39.99,
     videoUrl: "https://www.youtube.com/watch?v=example4",
-    thumbnailUrl: "https://i.imgur.com/0XhN9uT.jpeg"
+    thumbnailUrl: "/images/instructionals/kade.png"
   },
   {
     title: "The Triangle Trap",
-    instructor: "Ryan Hall",
+    instructor: "Craig Jones",
     price: 34.99,
     videoUrl: "https://www.youtube.com/watch?v=example5",
-    thumbnailUrl: "https://i.imgur.com/BoN9kdC.png"
+    thumbnailUrl: "/images/instructionals/jones.png"
   },
   {
     title: "Breaking the Closed Guard",
-    instructor: "Marcelo Garcia",
+    instructor: "Andre Galvao",
     price: 89.99,
     videoUrl: "https://www.youtube.com/watch?v=example6",
-    thumbnailUrl: "https://i.imgur.com/8Km9tLL.jpg"
+    thumbnailUrl: "/images/instructionals/andre.png"
   }
 ];
 
