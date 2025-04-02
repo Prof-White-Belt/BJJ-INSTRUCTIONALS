@@ -1,22 +1,32 @@
 <%- include("../partials/header.ejs") %>
 
-<div class="show-instructional-page">
-  <div class="instructional-details">
-    <img src="<%= instructional.thumbnailUrl %>" alt="<%= instructional.title %>" />
+<link rel="stylesheet" href="/stylesheets/show.css">
 
-    <h1><%= instructional.title %></h1>
-    <p><strong>Instructor:</strong> <%= instructional.instructor %></p>
-    <p><strong>Price:</strong> $<%= instructional.price.toFixed(2) %></p>
+<div class="instructional-show-container">
+  <div class="instructional-show-card">
+    <img src="<%= instructional.thumbnailUrl %>" alt="<%= instructional.title %>" class="instructional-show-img" />
 
-    <% if (user && user.favorites && user.favorites.includes(instructional._id.toString())) { %>
-      <form method="POST" action="/users/<%= user._id %>/favorites/<%= instructional._id %>?_method=DELETE">
-        <button type="submit">Unfavorite</button>
-      </form>
-    <% } else if (user) { %>
-      <form method="POST" action="/users/<%= user._id %>/favorites/<%= instructional._id %>">
-        <button type="submit">Favorite</button>
-      </form>
-    <% } %>
+    <div class="instructional-show-details">
+      <h1><%= instructional.title %></h1>
+      <p><strong>Instructor:</strong> <%= instructional.instructor %></p>
+      <p><strong>Price:</strong> $<%= instructional.price.toFixed(2) %></p>
+
+      <a href="<%= instructional.videoUrl %>" class="watch-now-link" target="_blank">Watch Now</a>
+
+      <% if (
+        user &&
+        user.favorites &&
+        user.favorites.includes(instructional._id.toString())
+      ) { %>
+        <form method="POST" action="/users/<%= user._id %>/favorites/<%= instructional._id %>?_method=DELETE">
+          <button type="submit" class="unfavorite-btn">Unfavorite</button>
+        </form>
+      <% } else if (user) { %>
+        <form method="POST" action="/users/<%= user._id %>/favorites/<%= instructional._id %>">
+          <button type="submit" class="favorite-btn">Favorite</button>
+        </form>
+      <% } %>
+    </div>
   </div>
 </div>
 

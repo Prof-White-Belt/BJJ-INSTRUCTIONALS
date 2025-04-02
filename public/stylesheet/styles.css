@@ -346,68 +346,71 @@ body {
   }
   
 
-
-
-
-  /* ======================== */
-/* INSTRUCTIONALS STYLES */
+/* ======================== */
+/* INSTRUCTIONALS PAGE STYLES */
 /* ======================== */
 
-
-
-
-  .instructionals-page {
-    padding: 3rem;
+.instructionals-page {
+    padding: 3rem 2rem;
     min-height: 100vh;
-    background: url("/images/bjj-instructionals.jpg") no-repeat center center fixed;
+    background: url("/images/instructionals/instructionals-bg.jpg") no-repeat center center fixed;
     background-size: cover;
+    background-position: center 40%;
     color: #fff;
     text-align: center;
   }
   
+  .instructionals-page h1 {
+    color: #6a6262; /* Dark charcoal, much easier to read */
+    text-shadow: none; /* Or use a softer shadow */
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+  }
+  
   .instructionals-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    justify-items: center;
-    margin-top: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
   .instructional-card {
     background: rgba(255, 255, 255, 0.85);
-    color: #111;
+    border-radius: 12px;
+    overflow: hidden;
     padding: 1rem;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
-  }
-  
-  .instructional-card:hover {
-    transform: translateY(-5px);
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   }
   
   .instructional-card img {
     width: 100%;
-    height: 180px;
+    max-height: 180px;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
   }
   
   .instructional-info h2 {
     font-size: 1.2rem;
-    margin: 0.5rem 0;
+    color: #222;
+    margin-bottom: 0.5rem;
   }
   
   .instructional-info p {
-    font-size: 0.95rem;
+    color: #555;
     margin: 0.3rem 0;
   }
   
-  .fav-btn,
-  .unfav-btn {
+  .instructional-info form {
     margin-top: 1rem;
-    padding: 0.5rem 1rem;
+  }
+  
+  .instructional-info button {
+    padding: 0.5rem 1.2rem;
+    background-color: #000;
+    color: #fff;
     border: none;
     border-radius: 8px;
     font-weight: bold;
@@ -415,21 +418,7 @@ body {
     transition: background-color 0.3s ease;
   }
   
-  .fav-btn {
-    background-color: #ffffff;
-    color: #000;
-  }
-  
-  .fav-btn:hover {
-    background-color: #eee;
-  }
-  
-  .unfav-btn {
-    background-color: #f44336;
-    color: white;
-  }
-  
-  .unfav-btn:hover {
-    background-color: #d32f2f;
+  .instructional-info button:hover {
+    background-color: #333;
   }
   
