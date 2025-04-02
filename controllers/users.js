@@ -4,10 +4,10 @@ import Instructional from "../models/Instructional.js";
 
 const router = express.Router();
 
-// GET /users/:userId – show user profile
-router.get("/:userId", async (req, res) => {
+// ✅ NEW: GET /users/:id/profile – show user profile
+router.get("/:id/profile", async (req, res) => {
   try {
-    const user = await User.findById(req.params.userId).populate("favorites");
+    const user = await User.findById(req.params.id).populate("favorites");
     res.render("users/profile", { userProfile: user });
   } catch (err) {
     console.error("Profile error:", err);
@@ -15,7 +15,7 @@ router.get("/:userId", async (req, res) => {
   }
 });
 
-// GET /users/:id/edit – show edit form
+// ✅ GET /users/:id/edit – show edit form
 router.get("/:id/edit", async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -26,19 +26,19 @@ router.get("/:id/edit", async (req, res) => {
   }
 });
 
-// PUT /users/:id – update user profile
+// ✅ PUT /users/:id – update user profile
 router.put("/:id", async (req, res) => {
   try {
     const { age, rank, bio } = req.body;
     await User.findByIdAndUpdate(req.params.id, { age, rank, bio });
-    res.redirect(`/users/${req.params.id}`);
+    res.redirect(`/users/${req.params.id}/profile`);
   } catch (err) {
     console.error("Profile update error:", err);
     res.status(500).send("Error updating profile");
   }
 });
 
-// POST /users/:userId/favorites/:instructionalId – add to favorites
+// ✅ POST /users/:userId/favorites/:instructionalId – add to favorites
 router.post("/:userId/favorites/:instructionalId", async (req, res) => {
   try {
     const user = await User.findById(req.params.userId);
@@ -56,7 +56,7 @@ router.post("/:userId/favorites/:instructionalId", async (req, res) => {
   }
 });
 
-// DELETE /users/:userId/favorites/:instructionalId – remove from favorites
+// ✅ DELETE /users/:userId/favorites/:instructionalId – remove from favorites
 router.delete("/:userId/favorites/:instructionalId", async (req, res) => {
   try {
     const user = await User.findById(req.params.userId);
@@ -67,9 +67,20 @@ router.delete("/:userId/favorites/:instructionalId", async (req, res) => {
     );
     await user.save();
 
-    res.redirect(`/users/${req.params.userId}`);
+    res.redirect(`/users/${req.params.userId}/profile`);
   } catch (err) {
     console.error("Unfavorite error:", err);
+    res.status(500).send("Server error");
+  }
+});
+
+// ✅ LAST: GET /users/:userId – fallback, should be last
+router.get("/:userId", async (req, res) => {
+  try {
+    const user = await User.findById(req.params.userId).populate("favorites");
+    res.render("users/profile", { userProfile: user });
+  } catch (err) {
+    console.error("Fallback profile error:", err);
     res.status(500).send("Server error");
   }
 });

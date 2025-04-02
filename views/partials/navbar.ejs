@@ -1,10 +1,8 @@
-<nav>
-
+<nav class="main-nav">
     <% if (user) { %>
-  
-      <a href="/"> Home</a>
-      <a href="/users/<%= user._id %>"> Profile</a>
-      <a href="/auth/logout"> Logout</a>
+      <a href="/home">Home</a>
+      <a href="/users/<%= user._id %>/profile">Profile</a>
+      <a href="/auth/logout">Logout</a>
     <% } %>
   </nav>
   

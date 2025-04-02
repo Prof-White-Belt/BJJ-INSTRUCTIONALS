@@ -1,0 +1,224 @@
+/* ======================== */
+/* GLOBAL STYLES */
+/* ======================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+  }
+  
+  
+  /* ======================== */
+  /* NAVBAR STYLES */
+  /* ======================== */
+  
+  .main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-evenly; /* ✅ This evenly distributes the links */
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.4); /* optional transparent background */
+  }
+  
+  .main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .main-nav a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  
+  /* ======================== */
+  /* LOGIN PAGE STYLES */
+  /* ======================== */
+  
+  .login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/images/bjj-login.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-position: center 45%;
+  }
+  
+  .landing-page {
+    background: rgba(255, 255, 255, 0.75);
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .login-form label {
+    text-align: left;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .login-form input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .login-form button {
+    padding: 0.6rem;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .login-form button:hover {
+    background-color: #000000;
+  }
+  
+  
+  /* ======================== */
+  /* SIGN-UP PAGE STYLES */
+  /* ======================== */
+  
+  .signup-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/images/bjj-signup.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-position: center 40%;
+  }
+  
+  .signup-form {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+  }
+  
+  .signup-form label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    color: #444;
+    margin-top: 1rem;
+  }
+  
+  .signup-form input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 0.25rem;
+  }
+  
+  .signup-form button {
+    margin-top: 1.5rem;
+    padding: 0.6rem;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+  }
+  
+  .signup-form button:hover {
+    background-color: #000000;
+  }
+  
+  .signup-form a {
+    color: #0a0a0a;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .signup-form a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  /* ======================== */
+  /* HOME PAGE STYLES */
+  /* ======================== */
+  
+  .home-page {
+    min-height: 100vh;
+    padding: 3rem 2rem;
+    background: url("/images/bjj-home.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-position: center 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
+  
+  .home-button-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 5rem;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .home-button:first-child {
+    margin-right: 10rem;
+  }
+  
+  .home-button:last-child {
+    margin-left: 10rem;
+  }
+  
+  .home-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: #a3bed1;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .home-button:hover {
+    background-color: #b8cad7;
+    transform: translateY(-2px);
+  }
+  

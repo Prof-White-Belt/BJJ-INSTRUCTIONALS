@@ -1,36 +1,22 @@
-<%- include("../partials/header.ejs") %>
+<%- include("../partials/header") %>
 
-<h1>Sign Up</h1>
+<div class="signup-page">
+  <div class="signup-form">
+    <h1>Join the BJJ Instructionals Community</h1>
+    <p>Get access to top-tier instructionals, post reviews, and track your progress.</p>
 
-<form method="POST" action="/auth/sign-up">
-  <!-- Username -->
-  <label for="username">Username:</label>
-  <input type="text" name="username" required />
+    <form method="POST" action="/auth/sign-up">
+      <label for="username">Username:</label>
+      <input type="text" name="username" required />
 
-  <!-- Password -->
-  <label for="password">Password:</label>
-  <input type="password" name="password" required />
+      <label for="password">Password:</label>
+      <input type="password" name="password" required />
 
-  <!-- Age -->
-  <label for="age">Age:</label>
-  <input type="number" name="age" min="0" />
+      <button type="submit">Sign Up</button>
+    </form>
 
-  <!-- Rank -->
-  <label for="rank">Rank:</label>
-  <select name="rank">
-    <option value="white">White</option>
-    <option value="blue">Blue</option>
-    <option value="purple">Purple</option>
-    <option value="brown">Brown</option>
-    <option value="black">Black</option>
-  </select>
+    <p>Already have an account? <a href="/">Log In</a></p>
+  </div>
+</div>
 
-  <!-- Bio -->
-  <label for="bio"> Bio:</label>
-  <textarea name="bio" rows="3" cols="30"></textarea>
-
-  <!-- Submit -->
-  <button type="submit">Sign Up</button>
-</form>
-
-<%- include("../partials/footer.ejs") %>
+<%- include("../partials/footer") %>
