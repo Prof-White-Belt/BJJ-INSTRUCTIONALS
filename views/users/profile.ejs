@@ -1,0 +1,27 @@
+<%- include("../partials/header.ejs") %>
+
+<h1> My Profile</h1>
+
+<p><strong>Username:</strong> <%= userProfile.username %></p>
+<p><strong>Age:</strong> <%= userProfile.age || 'Not provided' %></p>
+<p><strong>Rank:</strong> <%= userProfile.rank || 'Not provided' %></p>
+<p><strong>Bio:</strong> <%= userProfile.bio || 'Not provided' %></p>
+
+<a href="/users/<%= userProfile._id %>/edit"> Edit Profile</a>
+
+<h2> My Favorites</h2>
+<% if (userProfile.favorites.length === 0) { %>
+  <p>No favorites yet.</p>
+<% } else { %>
+  <% userProfile.favorites.forEach(inst => { %>
+    <div>
+      <p><strong>Title:</strong> <%= inst.title %></p>
+      <p><strong>Author:</strong> <%= inst.instructor %></p>
+      <form method="POST" action="/users/<%= userProfile._id %>/favorites/<%= inst._id %>?_method=DELETE">
+        <button type="submit"> Unfavorite</button>
+      </form>
+    </div>
+  <% }); %>
+<% } %>
+
+<%- include("../partials/footer.ejs") %>

@@ -1,0 +1,25 @@
+<%- include("../partials/header.ejs") %>
+
+<h1> Edit Profile</h1>
+
+<form method="POST" action="/users/<%= user._id %>?_method=PUT">
+  <label for="age">Age:</label>
+  <input type="number" name="age" value="<%= user.age %>" /><br />
+
+  <label for="rank">Rank:</label>
+  <label for="rank">Rank:</label>
+  <select name="rank" required>
+    <option value="White" <%= user.rank === "White" ? "selected" : "" %>>White</option>
+    <option value="Blue" <%= user.rank === "Blue" ? "selected" : "" %>>Blue</option>
+    <option value="Purple" <%= user.rank === "Purple" ? "selected" : "" %>>Purple</option>
+    <option value="Brown" <%= user.rank === "Brown" ? "selected" : "" %>>Brown</option>
+    <option value="Black" <%= user.rank === "Black" ? "selected" : "" %>>Black</option>
+  </select>
+  
+  <label for="bio">Bio:</label>
+  <textarea name="bio"><%= user.bio %></textarea><br />
+
+  <button type="submit"> Update</button>
+</form>
+
+<%- include("../partials/footer.ejs") %>

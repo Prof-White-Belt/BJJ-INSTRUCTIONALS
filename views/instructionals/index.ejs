@@ -1,0 +1,22 @@
+<%- include("../partials/header.ejs") %>
+
+<h1>📚 BJJ Instructionals</h1>
+
+<div class="instructionals">
+  <% instructionals.forEach(i => { %>
+    <div class="card">
+      <img src="<%= i.thumbnailUrl %>" alt="<%= i.title %>" width="200" />
+      <h2><%= i.title %></h2>
+      <p><strong>Instructor:</strong> <%= i.instructor %></p>
+      <p><strong>Price:</strong> $<%= i.price.toFixed(2) %></p>
+
+      <% if (user) { %>
+        <form method="POST" action="/users/<%= user._id %>/favorites/<%= i._id %>">
+          <button type="submit"> Favorite</button>
+        </form>
+      <% } %>
+    </div>
+  <% }) %>
+</div>
+
+<%- include("../partials/footer.ejs") %>
