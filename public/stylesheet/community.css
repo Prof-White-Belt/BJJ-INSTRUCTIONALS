@@ -1,0 +1,103 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4; /* Light background for the page */
+}
+
+body {
+  background-color: rgb(25, 188, 33);
+}
+
+/* Community Reviews Page Layout */
+.community {
+  padding: 2rem;
+}
+
+.community h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.community p {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Reviews List */
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.post-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #0073e6;
+}
+
+.post-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #0073e6;
+}
+
+.post-card p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.post-card .review-author {
+  font-size: 0.9rem;
+  color: #999;
+  margin-top: 1rem;
+}
+
+/* Edit/Delete Button Styles */
+.edit-review-button {
+  background-color: #ed1515;
+  color: white;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.edit-review-button:hover {
+  background-color: #333435;
+}
+
+/* Button to Write a New Review */
+.write-review-button {
+  background-color: #0073e6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 2rem 0;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.write-review-button:hover {
+  background-color: #1e2022;
+}

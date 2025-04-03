@@ -1,34 +1,55 @@
-<%- include("../partials/header.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile - BJJ Instructionals</title>
 
-<div class="profile-page">
-  <div class="profile-card">
-    <h1>My Profile</h1>
+    <!-- Link to Global CSS -->
+    <link rel="stylesheet" href="/stylesheet/global.css" />
+    <!-- Link to Profile Page Specific CSS -->
+    <link rel="stylesheet" href="/stylesheet/profile.css" />
+    <link rel="stylesheet" href="/stylesheet/navbar.css" />
 
-    <p><strong>Username:</strong> <%= userProfile.username %></p>
-    <p><strong>Age:</strong> <%= userProfile.age || 'Not provided' %></p>
-    <p><strong>Rank:</strong> <%= userProfile.rank || 'Not provided' %></p>
-    <p><strong>Bio:</strong> <%= userProfile.bio || 'Not provided' %></p>
+  </head>
 
-    <a href="/users/<%= userProfile._id %>/edit">Edit Profile</a>
-  </div>
+  <body>
+    <!-- Navbar -->
+    <%- include('../partials/navbar') %> <!-- Corrected path for your setup -->
 
-  <div class="profile-card">
-    <h2>My Favorites</h2>
-    <% if (userProfile.favorites.length === 0) { %>
-      <p>No favorites yet.</p>
-    <% } else { %>
-      <% userProfile.favorites.forEach(inst => { %>
-        <div>
-          <p><strong>Title:</strong> <%= inst.title %></p>
-          <p><strong>Instructor:</strong> <%= inst.instructor %></p>
-          <form method="POST" action="/users/<%= userProfile._id %>/favorites/<%= inst._id %>?_method=DELETE">
-            <button type="submit">Unfavorite</button>
-          </form>
-        </div>
-        <hr />
-      <% }); %>
-    <% } %>
-  </div>
-</div>
+    <div class="profile-page">
+      <!-- User Profile Card -->
+      <div class="profile-card">
+        <h1>My Profile</h1>
+        <p><strong>Username:</strong> <%= userProfile.username %></p>
+        <p><strong>Age:</strong> <%= userProfile.age || 'Not provided' %></p>
+        <p><strong>Rank:</strong> <%= userProfile.rank || 'Not provided' %></p>
+        <p><strong>Bio:</strong> <%= userProfile.bio || 'Not provided' %></p>
 
-<%- include("../partials/footer.ejs") %>
+        <a href="/users/<%= userProfile._id %>/edit">Edit Profile</a>
+      </div>
+
+      <!-- User Favorites Card -->
+      <div class="profile-card">
+        <h2>My Favorites</h2>
+        <% if (userProfile.favorites.length === 0) { %>
+          <p>No favorites yet.</p>
+        <% } else { %>
+          <% userProfile.favorites.forEach(inst => { %>
+            <div>
+              <p><strong>Title:</strong> <%= inst.title %></p>
+              <p><strong>Instructor:</strong> <%= inst.instructor %></p>
+              <form method="POST" action="/users/<%= userProfile._id %>/favorites/<%= inst._id %>?_method=DELETE">
+                <button type="submit">Unfavorite</button>
+              </form>
+            </div>
+            <hr />
+          <% }); %>
+        <% } %>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('../partials/footer') %>
+  </body>
+</html>

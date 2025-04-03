@@ -1,0 +1,94 @@
+/* Edit Profile Page */
+.edit-profile-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    background: url('/images/edit/bjj-edit.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensures the background image covers the entire page */
+    min-height: 100vh;
+    color: rgb(0, 0, 0);
+  }
+  
+  .edit-profile-card {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the form */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin-top: 5rem;
+  }
+  
+  .edit-profile-card h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .edit-profile-card p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .edit-profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .edit-profile-form label {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .edit-profile-form input,
+  .edit-profile-form select {
+    padding: 0.85rem 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: rgb(12, 11, 11);
+  }
+  
+  .edit-profile-form input:focus,
+  .edit-profile-form select:focus {
+    outline: none;
+    border-color: #585c60;
+  }
+  
+  .edit-profile-form button {
+    margin-top: 1rem;
+    padding: 0.85rem;
+    background-color: #1c1c1c;
+    color: rgb(173, 168, 168);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-profile-form button:hover {
+    background-color: #333;
+  }
+  
+  .edit-profile-footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+  
+  .edit-profile-footer a {
+    color: #596167;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .edit-profile-footer a:hover {
+    text-decoration: underline;
+  }
+  

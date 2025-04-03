@@ -1,0 +1,74 @@
+/* Profile Page Background */
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+    background: url('/images/profile/bjj-profile.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensures the background image covers the entire page */
+    min-height: 100vh;
+    color: rgb(0, 0, 0); /* Make sure text is visible against the image */
+  }
+  
+  /* Rest of your profile page styles */
+  .profile-card {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the cards */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+  
+  .profile-card h1, .profile-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-card p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+  }
+  
+  .profile-card a {
+    display: inline-block;
+    background-color: #a3bed1;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile-card a:hover {
+    background-color: #8aaabd;
+  }
+  
+  .profile-card form {
+    margin-top: 1rem;
+  }
+  
+  .profile-card form button {
+    padding: 8px 15px;
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile-card form button:hover {
+    background-color: #e14b4b;
+  }
+  
+  .profile-card hr {
+    margin: 1rem 0;
+  }
+  

@@ -7,8 +7,14 @@ const router = express.Router();
 
 // GET /posts - show all community posts
 router.get("/", async (req, res) => {
-  const posts = await Post.find().populate("userId", "username rank age").sort({ createdAt: -1 });
-  res.render("posts/index.ejs", { posts, user: req.session.user });
+  try {
+    // Fetch the posts from the database, populate the 'userId' field with user details
+    const posts = await Post.find().populate('userId', 'username rank age').sort({ createdAt: -1 });
+    res.render("posts/index.ejs", { posts, user: req.session.user }); // Passing posts and user to the view
+  } catch (error) {
+    console.error("Error loading posts", error);
+    res.status(500).send("Error loading posts");
+  }
 });
 
 // GET /posts/new - form to create new post

@@ -1,15 +1,34 @@
-<%- include("../partials/header.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Write a Review - BJJ Instructionals</title>
 
-<h1>➕ Write a Review</h1>
+    <!-- Link to Global and Page Specific CSS -->
+    <link rel="stylesheet" href="/stylesheet/global.css" />
+    <link rel="stylesheet" href="/stylesheet/community-reviews.css" />
+    <link rel="stylesheet" href="/stylesheet/navbar.css" />
 
-<form method="POST" action="/posts">
-  <label for="title">Title:</label>
-  <input type="text" name="title" required />
+  </head>
 
-  <label for="body">Body:</label>
-  <textarea name="body" rows="6" required></textarea>
+  <body>
+    <!-- Navbar -->
+    <%- include("../partials/navbar.ejs") %>
 
-  <button type="submit">Submit Review</button>
-</form>
+    <h1> Write a Review</h1>
 
-<%- include("../partials/footer.ejs") %>
+    <form method="POST" action="/posts">
+      <label for="title">Title:</label>
+      <input type="text" name="title" required />
+
+      <label for="body">Body:</label>
+      <textarea name="body" rows="6" required></textarea>
+
+      <button type="submit">Submit Review</button>
+    </form>
+
+    <!-- Footer -->
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>

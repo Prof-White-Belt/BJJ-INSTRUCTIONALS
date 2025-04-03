@@ -1,25 +1,48 @@
-<%- include("../partials/header.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile - BJJ Instructionals</title>
 
-<h1> Edit Profile</h1>
+    <!-- Link to Global CSS -->
+    <link rel="stylesheet" href="/stylesheet/global.css" />
+    <!-- Link to Profile Edit Page CSS -->
+    <link rel="stylesheet" href="/stylesheet/edit.css" />
+    <link rel="stylesheet" href="/stylesheet/navbar.css" />
 
-<form method="POST" action="/users/<%= user._id %>?_method=PUT">
-  <label for="age">Age:</label>
-  <input type="number" name="age" value="<%= user.age %>" /><br />
+  </head>
 
-  <label for="rank">Rank:</label>
-  <label for="rank">Rank:</label>
-  <select name="rank" required>
-    <option value="White" <%= user.rank === "White" ? "selected" : "" %>>White</option>
-    <option value="Blue" <%= user.rank === "Blue" ? "selected" : "" %>>Blue</option>
-    <option value="Purple" <%= user.rank === "Purple" ? "selected" : "" %>>Purple</option>
-    <option value="Brown" <%= user.rank === "Brown" ? "selected" : "" %>>Brown</option>
-    <option value="Black" <%= user.rank === "Black" ? "selected" : "" %>>Black</option>
-  </select>
-  
-  <label for="bio">Bio:</label>
-  <textarea name="bio"><%= user.bio %></textarea><br />
+  <body>
+    <!-- Navbar -->
+    <%- include('../partials/navbar') %> <!-- Corrected path for your setup -->
 
-  <button type="submit"> Update</button>
-</form>
+    <div class="edit-profile-page">
+      <div class="edit-profile-card">
+        <h1>Edit Profile</h1>
 
-<%- include("../partials/footer.ejs") %>
+        <form method="POST" action="/users/<%= user._id %>?_method=PUT" class="edit-profile-form">
+          <label for="age">Age:</label>
+          <input type="number" name="age" value="<%= user.age %>" /><br />
+
+          <label for="rank">Rank:</label>
+          <select name="rank" required>
+            <option value="White" <%= user.rank === "White" ? "selected" : "" %>>White</option>
+            <option value="Blue" <%= user.rank === "Blue" ? "selected" : "" %>>Blue</option>
+            <option value="Purple" <%= user.rank === "Purple" ? "selected" : "" %>>Purple</option>
+            <option value="Brown" <%= user.rank === "Brown" ? "selected" : "" %>>Brown</option>
+            <option value="Black" <%= user.rank === "Black" ? "selected" : "" %>>Black</option>
+          </select><br />
+
+          <label for="bio">Bio:</label>
+          <textarea name="bio"><%= user.bio %></textarea><br />
+
+          <button type="submit">Update</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('../partials/footer') %> <!-- Footer included here -->
+  </body>
+</html>

@@ -10,7 +10,7 @@
   
   .navbar ul {
     display: flex; /* Flexbox to arrange items horizontally */
-    justify-content: space-between; /* Distribute items across the width */
+    justify-content: space-evenly; /* Evenly space out the links */
     align-items: center; /* Vertically center the items */
     padding: 0;
     margin: 0;
@@ -39,11 +39,5 @@
   .navbar a.active {
     background-color: #1c1c1c; /* Active link color */
     color: #fff;
-  }
-  
-  /* Specific class to center the "Profile" link */
-  .navbar .profile-link {
-    flex-grow: 1; /* Makes the profile link take up available space */
-    text-align: center; /* Centers the text */
   }
   

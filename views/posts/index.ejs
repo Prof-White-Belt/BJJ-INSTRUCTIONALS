@@ -1,24 +1,44 @@
-<%- include("../partials/header.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Reviews - BJJ Instructionals</title>
 
-<h1>📢 Community Reviews</h1>
+    <!-- Link to Global and Page Specific CSS -->
+    <link rel="stylesheet" href="/stylesheet/global.css" />
+    <link rel="stylesheet" href="/stylesheet/community.css" />
+    <link rel="stylesheet" href="/stylesheet/navbar.css" />
 
-<a href="/posts/new"> Write a Review</a>
+  </head>
 
-<% posts.forEach(post => { %>
-  <div class="post-card">
-    <h2><%= post.title %></h2>
-    <p><%= post.body %></p>
-    <small>By: <%= post.userId.username %> | <%= post.createdAt.toDateString() %></small>
+  <body>
+    <!-- Navbar -->
+    <%- include("../partials/navbar.ejs") %>
 
-    <% if (user && post.userId._id.toString() === user._id.toString()) { %>
-      <!-- Show edit/delete only if current user is the owner -->
-      <a href="/posts/<%= post._id %>/edit"> Edit</a>
+    <h1>Community Reviews</h1>
+    
+    <a href="/posts/new">Write a Review</a>
+    
+    <% posts.forEach(post => { %>
+      <div class="post-card">
+        <h2><%= post.title %></h2>
+        <p><%= post.body %></p>
+        <small>By: <%= post.userId.username %> | <%= post.createdAt.toDateString() %></small>
+    
+        <% if (user && user._id.toString() === post.userId._id.toString()) { %>
+          <div class="post-actions">
+            <a href="/posts/<%= post._id %>/edit">Edit</a>
+    
+            <form method="POST" action="/posts/<%= post._id %>?_method=DELETE" style="display:inline;">
+              <button type="submit">Delete</button>
+            </form>
+          </div>
+        <% } %>
+      </div>
+    <% }) %>
+    
 
-      <form method="POST" action="/posts/<%= post._id %>?_method=DELETE" style="display:inline">
-        <button type="submit"> Delete</button>
-      </form>
-    <% } %>
-  </div>
-<% }) %>
-
-<%- include("../partials/footer.ejs") %>
+    
+    <%- include("../partials/footer.ejs") %>
+    
