@@ -7,7 +7,7 @@ const router = express.Router();
 
 // GET /posts - show all community posts
 router.get("/", async (req, res) => {
-  const posts = await Post.find().populate("userId").sort({ createdAt: -1 });
+  const posts = await Post.find().populate("userId", "username rank age").sort({ createdAt: -1 });
   res.render("posts/index.ejs", { posts, user: req.session.user });
 });
 
