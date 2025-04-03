@@ -1,80 +1,46 @@
-/* ======================== */
-/* GLOBAL STYLES */
-/* ======================== */
-
-body {
+/* RESET */
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
     overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
-  
-  /* ======================== */
-  /* NAVBAR STYLES */
-  /* ======================== */
-  
-  .main-nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-evenly; /* ✅ This evenly distributes the links */
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: rgba(0, 0, 0, 0.4); /* optional transparent background */
-  }
-  
-  .main-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-  }
-  
-  .main-nav a:hover {
-    text-decoration: underline;
-  }
-  
-  
-  
-  /* ======================== */
-  /* LANDING STYLES */
-  /* ======================== */
-  
-
+  /* LANDING */
   .landing-page {
-    min-height: 100vh;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    overflow: hidden;
-    padding: 3rem 1rem;
   }
   
   .landing-video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
     z-index: -1;
   }
   
   .landing-content {
-    background: rgba(255, 255, 255, 0.5); /* more transparent */
+    background: rgba(255, 255, 255, 0.85);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    text-align: center;
     max-width: 600px;
-    width: 100%;
+    width: 90%;
+    text-align: center;
+    z-index: 1;
   }
   
   .landing-content h1 {
@@ -84,477 +50,20 @@ body {
   
   .landing-content p {
     font-size: 1.1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   
   .landing-button {
-    padding: 0.8rem 2rem;
-    font-size: 1.1rem;
-    color: white;
+    padding: 0.75rem 2rem;
     background-color: #a3bed1;
+    color: white;
     text-decoration: none;
-    border-radius: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
   }
   
   .landing-button:hover {
     background-color: #8aaabd;
-    transform: translateY(-2px);
-  }
-  
-  .login-icon {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    font-size: 2.5rem;
-    color: white;
-    z-index: 10;
-    transition: transform 0.2s ease, color 0.2s ease;
-  }
-  
-  .login-icon:hover {
-    transform: scale(1.1);
-    color: #a3bed1;
-  }
-  
-  
-   /* ======================== */
-  /* SIGN-IN PAGE STYLES */
-  /* ======================== */
-  
-  .sign-in-page {
-    min-height: 100vh;
-    background: url("/images/gryan.png") no-repeat center center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    position: relative;
-  }
-  
-  .sign-in-page::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.1); /* dark overlay */
-    z-index: 0;
-  }
-  
-  .sign-in-box {
-    position: relative;
-    z-index: 1;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 2.5rem;
-    border-radius: 12px;
-    max-width: 400px;
-    width: 100%;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    text-align: center;
-  }
-  
-  .sign-in-box h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
-  }
-  
-  .sign-in-box p {
-    margin-bottom: 1.5rem;
-    color: #333;
-  }
-  
-  .sign-in-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .sign-in-form label {
-    text-align: left;
-    font-weight: bold;
-    color: #2c3e50;
-  }
-  
-  .sign-in-form input {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-  }
-  
-  .sign-in-form input:focus {
-    border-color: #8aaabd;
-    outline: none;
-  }
-  
-  .sign-in-form button {
-    padding: 0.8rem;
-    background-color: #a3bed1;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .sign-in-form button:hover {
-    background-color: #8aaabd;
-    transform: translateY(-2px);
-  }
-  
-  .signup-link {
-    margin-top: 1rem;
-    font-size: 0.95rem;
-  }
-  
-  .signup-link a {
-    color: #3a506b;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  .signup-link a:hover {
-    text-decoration: underline;
-  }
-  
-
-
-  /* ======================== */
-  /* SIGN-UP PAGE STYLES */
-  /* ======================== */
-  
-  .signup-page {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url("/images/sign-in.png") no-repeat center center fixed;
-    background-size: cover;
-    background-position: center 40%;
-  }
-  
-  .signup-form {
-    position: relative;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 2rem 3rem;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
-    width: 90%;
-    text-align: center;
-  }
-  
-  .signup-form label {
-    display: block;
-    text-align: left;
-    font-weight: bold;
-    color: #444;
-    margin-top: 1rem;
-  }
-  
-  .signup-form input {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    margin-top: 0.25rem;
-  }
-  
-  .signup-form button {
-    margin-top: 1.5rem;
-    padding: 0.6rem;
-    background-color: #000000;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    width: 100%;
-  }
-  
-  .signup-form button:hover {
-    background-color: #000000;
-  }
-  
-  .signup-form a {
-    color: #0a0a0a;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .signup-form a:hover {
-    text-decoration: underline;
-  }
-  
-  
-  /* ======================== */
-  /* HOME PAGE STYLES */
-  /* ======================== */
-  
-  .home-page {
-    min-height: 100vh;
-    padding: 3rem 2rem;
-    /* background: url("/images/bjj-home.jpg") no-repeat center center fixed; */
-    /* background-size: cover; */
-    /* background-position: center 45%; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .home-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
-  
-  .home-button-row {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 5rem;
-    width: 100%;
-    max-width: 800px;
-  }
-  
-  .home-button:first-child {
-    margin-right: 10rem;
-  }
-  
-  .home-button:last-child {
-    margin-left: 10rem;
-  }
-  
-  .home-button {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    background-color: #a3bed1;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .home-button:hover {
-    background-color: #b8cad7;
-    transform: translateY(-2px);
-  }
-  
-  /* ======================== */
-/* PROFILE PAGE STYLES */
-/* ======================== */
-
-.profile-page {
-    min-height: 100vh;
-    padding: 3rem 2rem;
-    background: url("/images/bjj-profile.jpg") no-repeat center center fixed;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-  
-  .profile-card {
-    background: rgba(255, 255, 255, 0.35);
-    -webkit-backdrop-filter: blur(6px); /* For Safari */
-    backdrop-filter: blur(6px);         /* For Chrome/Edge */
-    padding: 2rem;
-    border-radius: 12px;
-    max-width: 600px;
-    width: 90%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  }
-  
-  
-  .profile-card h1 {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  
-  .profile-card p {
-    margin: 0.5rem 0;
-  }
-  
-  .profile-card a {
-    display: inline-block;
-    margin-top: 1rem;
-    color: #08080867;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  .profile-card a:hover {
-    text-decoration: underline;
-  }
-  .fav-form {
-  margin-top: 1rem;
-}
-
-.fav-btn,
-.unfav-btn {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.fav-btn {
-  background-color: #ffffff;
-  color: #000;
-}
-
-.fav-btn:hover {
-  background-color: #e0e0e0;
-}
-
-.unfav-btn {
-  background-color: #f44336;
-  color: white;
-}
-
-.unfav-btn:hover {
-  background-color: #d32f2f;
-}
-
-
-
-
-
-
-  /* ======================== */
-/* FAVORITE/UNFAVORITE STYLES */
-/* ======================== */
-
-
-
-
-.fav-form {
-    margin-top: 1rem;
-  }
-  
-  .fav-btn,
-  .unfav-btn {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .fav-btn {
-    background-color: #ffffff;
-    color: #000;
-  }
-  
-  .fav-btn:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .unfav-btn {
-    background-color: #f44336;
-    color: white;
-  }
-  
-  .unfav-btn:hover {
-    background-color: #d32f2f;
-  }
-  
-
-/* ======================== */
-/* INSTRUCTIONALS PAGE STYLES */
-/* ======================== */
-
-.instructionals-page {
-    padding: 3rem 2rem;
-    min-height: 100vh;
-    background: url("/images/instructionals/instructionals-bg.jpg") no-repeat center center fixed;
-    background-size: cover;
-    background-position: center 40%;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .instructionals-page h1 {
-    color: #6a6262; /* Dark charcoal, much easier to read */
-    text-shadow: none; /* Or use a softer shadow */
-    font-size: 2.8rem;
-    margin-bottom: 2rem;
-  }
-  
-  .instructionals-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .instructional-card {
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 12px;
-    overflow: hidden;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .instructional-card img {
-    width: 100%;
-    max-height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-  }
-  
-  .instructional-info h2 {
-    font-size: 1.2rem;
-    color: #222;
-    margin-bottom: 0.5rem;
-  }
-  
-  .instructional-info p {
-    color: #555;
-    margin: 0.3rem 0;
-  }
-  
-  .instructional-info form {
-    margin-top: 1rem;
-  }
-  
-  .instructional-info button {
-    padding: 0.5rem 1.2rem;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .instructional-info button:hover {
-    background-color: #333;
   }
   

@@ -1,24 +1,27 @@
-<%- include("../partials/header") %>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/header") %>
 
-<div class="sign-in-page">
-  <div class="sign-in-box">
-    <h2>Welcome Back</h2>
-    <p>Sign in to continue your BJJ journey</p>
+  <body class="sign-in-page">
+    <div class="sign-in-box">
+      <h2>Welcome Back</h2>
+      <p>Sign in to continue</p>
 
-    <form method="POST" action="/auth/sign-in" class="sign-in-form">
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username" required />
+      <form class="sign-in-form" method="POST" action="/auth/sign-in">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required />
 
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" required />
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required />
 
-      <button type="submit">Log In</button>
-    </form>
+        <button type="submit">Sign In</button>
+      </form>
 
-    <p class="signup-link">
-      Don’t have an account? <a href="/auth/sign-up">Sign up</a>
-    </p>
-  </div>
-</div>
+      <div class="sign-in-footer">
+        <p>Don't have an account? <a href="/auth/sign-up">Sign up</a></p>
+      </div>
+    </div>
 
-<%- include("../partials/footer") %>
+    <%- include("../partials/footer") %>
+  </body>
+</html>
