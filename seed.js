@@ -15,7 +15,7 @@ const seedInstructionals = [
       },
       
   {
-    title: "Passing the Guard",
+    title: "Destroying the Guard",
     instructor: "Gordon Ryan",
     price: 59.99,
     videoUrl: "https://www.youtube.com/watch?v=example2",
@@ -29,7 +29,7 @@ const seedInstructionals = [
     thumbnailUrl: "/images/instructionals/leo.png"
   },
   {
-    title: "No-Gi Takedowns",
+    title: "Darce from Anywhere",
     instructor: "Kade Ruotolo",
     price: 39.99,
     videoUrl: "https://www.youtube.com/watch?v=example4",
@@ -43,11 +43,11 @@ const seedInstructionals = [
     thumbnailUrl: "/images/instructionals/jones.png"
   },
   {
-    title: "Breaking the Closed Guard",
-    instructor: "Andre Galvao",
+    title: "Unstoppable Backtake",
+    instructor: "Mica Galvao",
     price: 89.99,
     videoUrl: "https://www.youtube.com/watch?v=example6",
-    thumbnailUrl: "/images/instructionals/andre.png"
+    thumbnailUrl: "/images/instructionals/mica.png"
   }
 ];
 
@@ -55,11 +55,11 @@ const seedDB = async () => {
   try {
     console.log("⏳ Deleting old instructionals...");
     await Instructional.deleteMany({});
-    console.log("🚀 Inserting new instructionals...");
+    console.log(" Inserting new instructionals...");
     await Instructional.insertMany(seedInstructionals);
-    console.log("✅ Instructionals seeded successfully!");
+    console.log(" Instructionals seeded successfully!");
   } catch (err) {
-    console.error("❌ Seeding failed:", err.message);
+    console.error(" Seeding failed:", err.message);
   } finally {
     mongoose.connection.close();
   }

@@ -43,63 +43,186 @@ body {
   
   
   /* ======================== */
-  /* LOGIN PAGE STYLES */
+  /* LANDING STYLES */
   /* ======================== */
   
-  .login-page {
+
+  .landing-page {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("/images/bjj-login.jpg") no-repeat center center fixed;
-    background-size: cover;
-    background-position: center 45%;
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 1rem;
   }
   
-  .landing-page {
-    background: rgba(255, 255, 255, 0.75);
-    padding: 2rem 3rem;
+  .landing-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .landing-content {
+    background: rgba(255, 255, 255, 0.5); /* more transparent */
+    padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    width: 90%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .landing-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .landing-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .landing-button {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #a3bed1;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .landing-button:hover {
+    background-color: #8aaabd;
+    transform: translateY(-2px);
+  }
+  
+  .login-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+    color: white;
+    z-index: 10;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  .login-icon:hover {
+    transform: scale(1.1);
+    color: #a3bed1;
+  }
+  
+  
+   /* ======================== */
+  /* SIGN-IN PAGE STYLES */
+  /* ======================== */
+  
+  .sign-in-page {
+    min-height: 100vh;
+    background: url("/images/gryan.png") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+  }
+  
+  .sign-in-page::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* dark overlay */
+    z-index: 0;
+  }
+  
+  .sign-in-box {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2.5rem;
+    border-radius: 12px;
     max-width: 400px;
+    width: 100%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     text-align: center;
   }
   
-  .login-form {
+  .sign-in-box h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+  }
+  
+  .sign-in-box p {
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .sign-in-form {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1rem;
   }
   
-  .login-form label {
+  .sign-in-form label {
     text-align: left;
     font-weight: bold;
-    color: #444;
+    color: #2c3e50;
   }
   
-  .login-form input {
-    padding: 0.5rem;
+  .sign-in-form input {
+    padding: 0.8rem;
     border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 8px;
+    font-size: 1rem;
   }
   
-  .login-form button {
-    padding: 0.6rem;
-    background-color: #000000;
-    color: white;
+  .sign-in-form input:focus {
+    border-color: #8aaabd;
+    outline: none;
+  }
+  
+  .sign-in-form button {
+    padding: 0.8rem;
+    background-color: #a3bed1;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    border-radius: 8px;
+    color: white;
     font-weight: bold;
-    transition: background-color 0.3s;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
   
-  .login-form button:hover {
-    background-color: #000000;
+  .sign-in-form button:hover {
+    background-color: #8aaabd;
+    transform: translateY(-2px);
   }
   
+  .signup-link {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
   
+  .signup-link a {
+    color: #3a506b;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  
+
+
   /* ======================== */
   /* SIGN-UP PAGE STYLES */
   /* ======================== */
@@ -109,7 +232,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url("/images/bjj-signup.jpg") no-repeat center center fixed;
+    background: url("/images/sign-in.png") no-repeat center center fixed;
     background-size: cover;
     background-position: center 40%;
   }
@@ -177,14 +300,26 @@ body {
   .home-page {
     min-height: 100vh;
     padding: 3rem 2rem;
-    background: url("/images/bjj-home.jpg") no-repeat center center fixed;
-    background-size: cover;
-    background-position: center 45%;
+    /* background: url("/images/bjj-home.jpg") no-repeat center center fixed; */
+    /* background-size: cover; */
+    /* background-position: center 45%; */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
     width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .home-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
   }
   
   .home-button-row {
@@ -221,6 +356,7 @@ body {
     background-color: #b8cad7;
     transform: translateY(-2px);
   }
+  
   /* ======================== */
 /* PROFILE PAGE STYLES */
 /* ======================== */

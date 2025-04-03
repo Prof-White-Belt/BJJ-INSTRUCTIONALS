@@ -1,6 +1,13 @@
 <%- include("partials/header") %>
 
 <div class="home-page">
+  
+  <!-- Background Video -->
+  <video autoplay muted loop class="home-video">
+    <source src="/videos/home.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
   <!-- Top Title -->
   <h1 class="home-title">BJJ Instructionals</h1>
 
@@ -9,6 +16,7 @@
     <a href="/instructionals" class="home-button">Instructionals</a>
     <a href="/posts" class="home-button">Community Reviews</a>
   </div>
+
 </div>
 
 <%- include("partials/footer") %>
