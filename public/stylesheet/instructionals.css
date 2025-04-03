@@ -1,0 +1,89 @@
+/* Instructionals Page Layout */
+.instructionals-page {
+    padding: 2rem 5vw;
+    text-align: center;
+    color: rgb(0, 0, 0);
+  }
+  
+  .instructionals-page h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* 3x2 Grid for Instructional Cards */
+  .instructionals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+    gap: 2rem;
+    justify-items: center;
+  }
+  
+  /* Card Container (clickable area) */
+  .instructional-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  /* Card Style */
+  .instructional-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    max-width: 300px;
+    width: 100%;
+  }
+  
+  .instructional-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Thumbnail Image */
+  .instructional-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Info Section */
+  .instructional-info {
+    padding: 1.2rem;
+    text-align: left;
+  }
+  
+  .instructional-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: rgb(0, 0, 0);
+  }
+  
+  .instructional-info p {
+    margin: 0.25rem 0;
+    font-size: 1rem;
+    color: #000000;
+  }
+  
+  /* Favorite Buttons */
+  .instructional-info form {
+    margin-top: 1rem;
+  }
+  
+  .instructional-info button {
+    padding: 0.5rem 1rem;
+    background-color: #899fab;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .instructional-info button:hover {
+    background-color: #9ab9ce;
+  }
+  
