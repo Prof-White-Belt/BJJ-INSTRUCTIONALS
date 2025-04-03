@@ -1,14 +1,13 @@
+<!-- views/partials/header.ejs -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BJJ Instructionals</title>
-  
-    <!-- CSS Links -->
-    <link rel="stylesheet" href="/stylesheet/partials.css" />
-    <link rel="stylesheet" href="/stylesheet/show.css" />
-    <link rel="stylesheet" href="/stylesheet/styles.css" />
+
+    <!-- Link to Global CSS -->
+    <link rel="stylesheet" href="/stylesheet/global.css" />
 
     <!-- Font Awesome -->
     <link
@@ -18,7 +17,9 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  
-<body>
-  <%- include("./navbar.ejs") %>
-  
+
+  <body>
+    <!-- Navbar -->
+    <%- include("./navbar.ejs") %> <!-- Add Navbar here -->
+  </body>
+</html>

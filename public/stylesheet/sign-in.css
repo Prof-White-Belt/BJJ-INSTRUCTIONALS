@@ -1,0 +1,88 @@
+/* ======================== */
+/* SIGN-IN PAGE */
+/* ======================== */
+
+.sign-in-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/images/signin/gryan.png") no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .sign-in-page::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+  }
+  
+  .sign-in-box {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  .sign-in-box h2,
+  .sign-in-box p,
+  .sign-in-box label {
+    color: white;
+  }
+  
+  .sign-in-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: left;
+  }
+  
+  .sign-in-form input {
+    padding: 0.85rem 1rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .sign-in-form input:focus {
+    outline: none;
+    border-color: #5a9bcf;
+  }
+  
+  .sign-in-form button {
+    margin-top: 1rem;
+    padding: 0.85rem;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  
+  .sign-in-footer {
+    margin-top: 2rem;
+    color: white;
+  }
+  
+  .sign-in-footer a {
+    color: #5a9bcf;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  

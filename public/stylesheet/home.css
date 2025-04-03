@@ -1,0 +1,71 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;  /* Prevent horizontal scroll */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* HOME */
+  .home-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;  /* Stack content vertically */
+    justify-content: flex-start;  /* Align content at the top */
+    align-items: center;
+  }
+  
+  .home-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;  /* Full width of viewport */
+    height: 100vh;  /* Full height of viewport */
+    object-fit: cover;  /* Ensure the video fills the container */
+    z-index: -1;  /* Keep the video in the background */
+  }
+  
+  /* Title and Content Section */
+  .home-title {
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    margin-top: 80px;  /* Add some space from the top */
+    text-align: center;
+    z-index: 1; /* Ensure title is above the video */
+  }
+  
+  .home-button-row {
+    display: flex;
+    justify-content: space-between; /* Space out the buttons evenly */
+    gap: 3rem;
+    width: 80%;  /* Adjust width for spacing */
+    z-index: 1; /* Ensure buttons are above the video */
+    margin-top: 2rem;  /* Add some space below the title */
+  }
+  
+  .home-button {
+    padding: 0.5rem 1rem;
+    background-color: #494b4c;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 30%;  /* Set button width for even spacing */
+    text-align: center;
+  }
+  
+  .home-button:hover {
+    background-color: #484b4d;
+  }
+  

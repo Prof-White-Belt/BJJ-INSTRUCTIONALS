@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("partials/header") %>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BJJ Instructionals - Landing</title>
 
-  <body>
-    <div class="landing-page">
-      <!-- Background Video -->
-      <video autoplay muted loop class="landing-video">
-        <source src="/videos/landing-video.mp4" type="video/mp4" />
-        Your browser does not support HTML5 video.
-      </video>
+    <!-- Link to the landing page specific CSS -->
+    <link rel="stylesheet" href="/stylesheet/landing.css" />
+    <link rel="stylesheet" href="/stylesheet/global.css" />
 
-      <!-- 🧼 Removed login-icon here -->
+  </head>
 
-      <!-- Centered Landing Content -->
-      <div class="landing-content">
-        <h1>Welcome to BJJ Instructionals</h1>
-        <p>Train smarter, not harder. Explore, favorite, and review high-quality jiu-jitsu instructionals.</p>
-        <a href="/auth/sign-in" class="landing-button">Enter Site</a>
-      </div>
-    </div>
+  <body class="landing-page">
+    <!-- Video Background -->
+    <video class="landing-video" autoplay muted loop>
+      <source src="/videos/landing-video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
 
-    <%- include("partials/footer") %>
+    <!-- Landing Page Content -->
+    <section class="landing-content">
+      <h1>Welcome to BJJ Instructionals</h1>
+      <p>Learn from the best and level up your Brazilian Jiu-Jitsu game.</p>
+      <a href="/auth/sign-in" class="landing-button">Get Started</a>
+    </section>
+
+    <%- include('partials/footer') %>
+
   </body>
 </html>

@@ -1,22 +1,39 @@
-<%- include("partials/header") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BJJ Instructionals - Home</title>
 
-<div class="home-page">
-  
-  <!-- Background Video -->
-  <video autoplay muted loop class="home-video">
-    <source src="/videos/home.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
+    <!-- Link to the Global CSS -->
+    <link rel="stylesheet" href="/stylesheet/global.css" />
+    <link rel="stylesheet" href="/stylesheet/navbar.css" />
+    <link rel="stylesheet" href="/stylesheet/home.css" /> <!-- Link to Home Page CSS -->
 
-  <!-- Top Title -->
-  <h1 class="home-title">BJJ Instructionals</h1>
+  </head>
 
-  <!-- Button Section -->
-  <div class="home-button-row">
-    <a href="/instructionals" class="home-button">Instructionals</a>
-    <a href="/posts" class="home-button">Community Reviews</a>
-  </div>
+  <body>
+    <!-- Navbar -->
+    <%- include('partials/navbar') %>
 
-</div>
+    <div class="home-page">
+      <!-- Background Video -->
+      <video autoplay muted loop preload="auto" class="home-video">
+        <source src="/videos/home-video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
 
-<%- include("partials/footer") %>
+      <!-- Top Title -->
+      <h1 class="home-title">BJJ Instructionals</h1>
+
+      <!-- Button Section -->
+      <div class="home-button-row">
+        <a href="/instructionals" class="home-button">Instructionals</a>
+        <a href="/posts" class="home-button">Community Reviews</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('partials/footer') %>  <!-- Footer is included here -->
+  </body>
+</html>
