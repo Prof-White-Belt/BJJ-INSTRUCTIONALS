@@ -75,7 +75,7 @@ router.delete("/:userId/favorites/:instructionalId", async (req, res) => {
       req.session.user.favorites = user.favorites.map(fav => fav.toString());
     }
 
-    // ✅ Redirects user back to the page they came from
+    //  Redirects user back to the page they came from
     res.redirect(req.get("Referer") || `/users/${req.params.userId}/profile`);
   } catch (err) {
     console.error("Unfavorite error:", err);
@@ -84,7 +84,6 @@ router.delete("/:userId/favorites/:instructionalId", async (req, res) => {
 });
 
 
-// (Optional fallback) GET /users/:userId – fallback to profile
 router.get("/:userId", async (req, res) => {
   try {
     const user = await User.findById(req.params.userId).populate("favorites");

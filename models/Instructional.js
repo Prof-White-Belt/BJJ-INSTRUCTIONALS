@@ -4,7 +4,8 @@ const instructionalSchema = new mongoose.Schema({
   title: String,
   instructor: String,
   price: Number,
-  thumbnailUrl: String
+  thumbnailUrl: String,
+  videoUrl: String 
 });
 
 const Instructional = mongoose.model("Instructional", instructionalSchema);
