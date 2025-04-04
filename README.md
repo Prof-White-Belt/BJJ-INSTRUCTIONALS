@@ -1,7 +1,7 @@
 #  BJJ Instructionals – Full-Stack Web App
 
 
-![App Screenshot](./public/images/screenshotreadme1.png)
+![App Screenshot](./public/images/readme/screenshotreadme1.png)
 
 ---
 
@@ -24,7 +24,7 @@ This app is inspired by training platforms like **BJJ Fanatics** and built to sh
 
 This image summarizes all primary navigation routes, HTTP methods, and access control in the app.
 
-![Routes Table](./public/images/routing.png)
+![Routes Table](./public/images/readme/routing.png)
 
 
 ## Wireframes & ERD Planning
@@ -34,46 +34,46 @@ The wireframes and ERD were created using Excalidraw to plan key user flows and 
 ---
 
 ### Full Wireframe Overview  
-![Whole App Flow](./public/images/WHOLE%20WIREFRAME.png)
+![Whole App Flow](./public/images/readme/WHOLE%20WIREFRAME.png)
 
 ---
 
 ### Login Page  
-![Login Page](./public/images/login.png)
+![Login Page](./public/images/readme/login.png)
 
 ---
 
 ### Sign Up Page  
-![Sign Up Page](./public/images/signup.png)
+![Sign Up Page](./public/images/readme/signup.png)
 
 ---
 
 ### Home Page  
-![Home Page](./public/images/home.png)
+![Home Page](./public/images/readme/home.png)
 
 ---
 
 ### Profile Page  
 
-![User Profile Wireframe](./public/images/userprofile.png)
+![User Profile Wireframe](./public/images/readme/userprofile.png)
 ---
 
 ### Cart Page  
-![Cart Page](./public/images/cart.png)
+![Cart Page](./public/images/readme/cart.png)
 
 ---
 
 ### Reviews Page  
-![Reviews Page](./public/images/reviews.png)
+![Reviews Page](./public/images/readme/reviews.png)
 
 ---
 
 ### Instructionals Page  
-![Instructionals Wireframe](./public/images/instructional.png)
+![Instructionals Wireframe](./public/images/readme/instructional.png)
 ---
 
 ### Community Reviews  
-![Community Reviews](./public/images/comreviews.png)
+![Community Reviews](./public/images/readme/comreviews.png)
 
 
 ## Entity Relationship Diagrams (ERD)
@@ -83,22 +83,22 @@ These diagrams show the models and relationships for the BJJ Instructionals app.
 ---
 
 ### User Model  
-![User ERD](./public/images/erd-user.png)
+![User ERD](./public/images/readme/erd-user.png)
 
 ---
 
 ### Post Model  
-![Post ERD](./public/images/erd-post.png)
+![Post ERD](./public/images/readme/erd-post.png)
 
 ---
 
 ### Instructional Model  
-![Instructional ERD](./public/images/erd-instructionals.png)
+![Instructional ERD](./public/images/readme/erd-instructionals.png)
 
 ---
 
 ### Full App ERD Overview  
-![Full ERD](./public/images/erd-full.png)
+![Full ERD](./public/images/readme/erd-full.png)
 
 ##  Technologies Used
 
