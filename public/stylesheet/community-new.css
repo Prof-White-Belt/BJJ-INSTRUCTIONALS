@@ -1,0 +1,56 @@
+/* Center the page title */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #222;
+  }
+  
+  /* New review form styling */
+  .new-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  /* Input and textarea styling */
+  .new-form input[type="text"],
+  .new-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  /* Submit button styling */
+  .new-form button {
+    align-self: flex-end;
+    background-color: #28a745;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .new-form button:hover {
+    background-color: #218838;
+  }
+  
+  /* Optional: Label styling */
+  .new-form label {
+    font-weight: bold;
+    color: #333;
+  }
+  

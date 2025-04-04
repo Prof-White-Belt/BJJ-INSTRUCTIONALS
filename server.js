@@ -27,7 +27,6 @@ import authController from "./controllers/auth.js";
 import instructionalController from "./controllers/instructionals.js";
 import usersController from "./controllers/users.js";
 import postsController from "./controllers/posts.js";
-import Post from "./models/post.js"; // Ensure the Post model is imported
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -69,17 +68,6 @@ app.get("/home", isSignedIn, (req, res) => {
   res.render("home.ejs", { user: req.session.user });
 });
 
-// GET /posts - show all community posts
-app.get('/posts', async (req, res) => {
-  try {
-    const posts = await Post.find().populate('userId', 'username rank age').sort({ createdAt: -1 });
-    console.log(posts); // Log the fetched posts to see if they are being returned
-    res.render('posts/index.ejs', { posts: posts, user: req.session.user });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Error loading posts');
-  }
-});
 
 // 🔐 Protected Routes (Only for signed in users)
 app.use(isSignedIn);

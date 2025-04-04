@@ -7,18 +7,17 @@
 
     <!-- Link to Global and Page Specific CSS -->
     <link rel="stylesheet" href="/stylesheet/global.css" />
-    <link rel="stylesheet" href="/stylesheet/community-reviews.css" />
     <link rel="stylesheet" href="/stylesheet/navbar.css" />
-
+    <link rel="stylesheet" href="/stylesheet/community-new.css" />
   </head>
 
   <body>
     <!-- Navbar -->
     <%- include("../partials/navbar.ejs") %>
 
-    <h1> Write a Review</h1>
+    <h1>Write a Review</h1>
 
-    <form method="POST" action="/posts">
+    <form method="POST" action="/posts" class="new-form">
       <label for="title">Title:</label>
       <input type="text" name="title" required />
 

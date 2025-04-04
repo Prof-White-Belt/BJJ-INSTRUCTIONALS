@@ -1,39 +1,65 @@
-<%- include("../partials/header.ejs") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= instructional.title %> | BJJ Instructionals</title>
 
-<link rel="stylesheet" href="/stylesheet/show.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/stylesheet/global.css" />
+    <link rel="stylesheet" href="/stylesheet/navbar.css" />
+    <link rel="stylesheet" href="/stylesheet/show.css" />
+  </head>
 
-<div class="instructional-show-container">
-  <div class="instructional-show-card">
-    <img src="<%= instructional.thumbnailUrl %>" alt="<%= instructional.title %>" class="instructional-show-img" />
+  <body>
+    <!-- Navbar -->
+    <%- include("../partials/header.ejs") %>
 
-    <div class="instructional-show-details">
-      <h1><%= instructional.title %></h1>
-      <p><strong>Instructor:</strong> <%= instructional.instructor %></p>
-      <p><strong>Price:</strong> $<%= instructional.price.toFixed(2) %></p>
+    <div class="instructional-show-container">
+      <div class="instructional-show-card">
+        <!-- Left: Thumbnail -->
+        <img
+          src="<%= instructional.thumbnailUrl %>"
+          alt="<%= instructional.title %>"
+          class="instructional-show-img"
+        />
 
-      <!-- 🎯 Watch Now button that opens YouTube in a new tab -->
-      <a href="<%= instructional.videoUrl %>" class="watch-now-link" target="_blank" rel="noopener noreferrer">
-        Watch Now
-      </a>
+        <!-- Right: Details -->
+        <div class="instructional-show-details">
+          <h1><%= instructional.title %></h1>
+          <p><strong>Instructor:</strong> <%= instructional.instructor %></p>
+          <p><strong>Price:</strong> $<%= instructional.price.toFixed(2) %></p>
 
-      <% if (
-        user &&
-        user.favorites &&
-        user.favorites.includes(instructional._id.toString())
-      ) { %>
-        <form method="POST" action="/users/<%= user._id %>/favorites/<%= instructional._id %>?_method=DELETE">
-          <button type="submit" class="unfavorite-btn">Unfavorite</button>
-        </form>
-      <% } else if (user) { %>
-        <form method="POST" action="/users/<%= user._id %>/favorites/<%= instructional._id %>">
-          <button type="submit" class="favorite-btn">Favorite</button>
-        </form>
-      <% } %>
+          <a
+            href="<%= instructional.videoUrl %>"
+            class="watch-now-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Watch Now
+          </a>
+
+          <% if (
+            user &&
+            user.favorites &&
+            user.favorites.includes(instructional._id.toString())
+          ) { %>
+            <form method="POST" action="/users/<%= user._id %>/favorites/<%= instructional._id %>?_method=DELETE">
+              <button type="submit" class="unfavorite-btn">Unfavorite</button>
+            </form>
+          <% } else if (user) { %>
+            <form method="POST" action="/users/<%= user._id %>/favorites/<%= instructional._id %>">
+              <button type="submit" class="favorite-btn">Favorite</button>
+            </form>
+          <% } %>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<%- include("../partials/footer.ejs") %>
-<script>
-  console.log("<%= instructional.videoUrl %>");
-</script>
+    <%- include("../partials/footer.ejs") %>
+
+    <script>
+      console.log("<%= instructional.videoUrl %>");
+    </script>
+  </body>
+</html>

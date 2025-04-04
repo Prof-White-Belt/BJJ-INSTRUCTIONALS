@@ -1,0 +1,91 @@
+/* Container for the full instructional detail view */
+.instructional-show-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    background: url('/videos/home-video.mp4') no-repeat center center;
+    background-size: cover;
+  }
+  
+  /* Glass card layout */
+  .instructional-show-card {
+    display: flex;
+    gap: 2rem;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(54, 174, 218, 0.3);
+    max-width: 1200px;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  /* Left: Thumbnail */
+  .instructional-show-img {
+    width: 400px;
+    height: 100%;
+    max-height: 800px;
+    object-fit: cover;
+  }
+  
+  
+  /* Right: Text + Buttons */
+  .instructional-show-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    max-width: 500px;
+  }
+  
+  .instructional-show-details h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .instructional-show-details p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Watch Now Button */
+  .watch-now-link {
+    margin: 1rem 0;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #dad1d1;
+    color: rgb(0, 0, 0);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .watch-now-link:hover {
+    background-color: #79b8e3;
+  }
+  
+  /* Favorite / Unfavorite Buttons */
+  .favorite-btn,
+  .unfavorite-btn {
+    padding: 0.6rem 1.2rem;
+    background-color: transparent;
+    border: 2px solid rgb(155, 189, 213);
+    color: rgb(11, 10, 10);
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+  }
+  
+  .favorite-btn:hover,
+  .unfavorite-btn:hover {
+    background-color: rgb(136, 210, 210);
+    color: #222;
+  }
+  

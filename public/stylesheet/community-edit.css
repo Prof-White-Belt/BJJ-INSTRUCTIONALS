@@ -1,0 +1,56 @@
+/* Center the heading */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #222;
+  }
+  
+  /* Style the edit form container */
+  .edit-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  /* Input and textarea styling */
+  .edit-form input[type="text"],
+  .edit-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  /* Button styling */
+  .edit-form button {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .edit-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Optional: Style the labels */
+  .edit-form label {
+    font-weight: bold;
+    color: #333;
+  }
+  
