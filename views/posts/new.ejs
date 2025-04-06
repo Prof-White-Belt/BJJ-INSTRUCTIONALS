@@ -15,8 +15,10 @@
     <!-- Navbar -->
     <%- include("../partials/navbar.ejs") %>
 
-    <h1>Write a Review</h1>
-
+    <div class="glass-header">
+      <h1>Write a Review</h1>
+    </div>
+    
     <form method="POST" action="/posts" class="new-form">
       <label for="title">Title:</label>
       <input type="text" name="title" required />

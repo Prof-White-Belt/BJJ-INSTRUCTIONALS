@@ -6,6 +6,27 @@ h1 {
   margin-bottom: 1.5rem;
   color: #222;
 }
+.glass-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin: 2rem auto;
+  background-color: rgba(255, 255, 255, 0.1); /* Light glass layer */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: fit-content;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: rgb(0, 0, 0); /* assumes dark background image */
+}
+
 body {
   background-image: url('/images/posts/post.png');
   background-size: cover;        /* Scale image to cover the whole screen */
