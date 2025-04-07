@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// GET /instructionals/:id – Show individual instructional
+// GET /instructionals/:id – Show unique individual instructional
 router.get("/:id", async (req, res) => {
   try {
     const instructional = await Instructional.findById(req.params.id);

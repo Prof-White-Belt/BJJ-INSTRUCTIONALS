@@ -4,7 +4,7 @@ const router = express.Router();
 import User from "../models/user.js";
 import Instructional from "../models/Instructional.js";
 
-// GET /users/:id/profile – show user profile
+// GET /users/:id/profile – Show Current user's profile
 router.get("/:id/profile", async (req, res) => {
   try {
     const user = await User.findById(req.params.id).populate("favorites");
@@ -15,7 +15,7 @@ router.get("/:id/profile", async (req, res) => {
   }
 });
 
-// GET /users/:id/edit – show edit form
+// GET /users/:id/edit – Show current user's edit form
 router.get("/:id/edit", async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -26,7 +26,7 @@ router.get("/:id/edit", async (req, res) => {
   }
 });
 
-// PUT /users/:id – update user profile
+// PUT /users/:id – Update current user's profile
 router.put("/:id", async (req, res) => {
   try {
     const { age, rank, bio } = req.body;
@@ -38,7 +38,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// POST /users/:userId/favorites/:instructionalId – add to favorites
+// POST /users/:userId/favorites/:instructionalId – Add to current user's favorites
 router.post("/:userId/favorites/:instructionalId", async (req, res) => {
   try {
     const user = await User.findById(req.params.userId);

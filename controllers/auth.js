@@ -39,7 +39,7 @@ router.post("/sign-up", async (req, res) => {
   }
 });
 
-// POST sign-in
+// POST SIGN-IN
 router.post("/sign-in", async (req, res) => {
   try {
     const userInDb = await User.findOne({ username: req.body.username });
@@ -63,7 +63,7 @@ router.post("/sign-in", async (req, res) => {
   }
 });
 
-// GET logout
+// GET LOGOUT
 router.get("/logout", (req, res) => {
   req.session.destroy(() => {
     res.redirect("/");
